@@ -1,0 +1,71 @@
+<!--THIS NAVBAR IS NOT USED!!! IT WAS THE FIRST... and changed for RESPONSIVE Navbar-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <ul class="nav">
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        {% with header_image=settings.base.NavigationSettings.header_image header_cta=settings.base.NavigationSettings.header_cta  %}
+                            {% if header_image or header_cta  %}
+                                {% if header_image %}
+                                    {% image header_image width-300 %}
+                                    <div>
+                                    {% if header_cta %}
+                                        {{ header_cta }}
+                                    {% endif %}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                                
+                            <!--<img src="https://static.wixstatic.com/media/ffc1bf_465f89f9b13a4d35a7933f450c3357da~mv2.png/v1/fill/w_394,h_120,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ffc1bf_465f89f9b13a4d35a7933f450c3357da~mv2.png" class="h-6 mr-3" alt="Flowbite Logo" />-->
+                        {% endwith %}
+                    </ul>
+                </div>
+                
+                
+                    <!-- For Localization of Page: -->
+                <div class="col">
+                {% if page %}
+                
+                    {% for translation in page.get_translations.live %}
+                    <div class="languages grid">
+                        <ul class="nav">
+                            <a href="{% pageurl translation %}" role="button" class="outline" rel="alternate" hreflang="{{ translation.locale.language_code }}">
+                                {{ translation.locale.language_name_local }}
+                            </a>
+                        </ul>
+                    </div>
+                    {% endfor %}
+                
+                {% endif %}
+                </div>
+            
+                    <!--For Localization of Page: -->
+                    <!--{% for language_code, language_name in LANGUAGES %}
+                        {% get_language_info for language_code as lang %}
+                    
+                        {% language language_code %}
+                            <a href="{% pageurl page.localized %}" rel="alternate" hreflang="{{ language_code }}">
+                                {{ lang.name_local }}
+                            </a>
+                            
+                        {% endlanguage %}
+                    {% endfor %}-->
+
+                
+                <div class="col"
+                    <ul class="nav">
+                        <li class="nav-item">
+                            {% main_menu max_levels=1 add_sub_menus_inline=True template="./menus/main_menu2.html" sub_menu_template="./menus/sub_menu.html" %}
+                            {% if sub_menu %}
+                                
+                                    {{ sub_menu }}
+                                
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+<!-- load wagtailcore_tags by adding this: -->
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-normalpage{% endblock %}
+
+<!-- replace everything below with: -->
+{% block content %}
+
+
+ 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="banner_image">
+                {% image page.banner_image fill-150x150  %}
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="Info">
+                <H2>{{ page.banner_title }}</H2>
+                {{ page.banner_subtitle|richtext }}
+                {{ page.body|richtext }}
+                
+                
+            </div>
+        </div>
+    </div>
+    {{ page.extra }}
+    {% endblock %}
+</div>

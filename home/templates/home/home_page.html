@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+
+<!-- load wagtailcore_tags by adding this: -->
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+
+
+{% block body_class %}template-homepage{% endblock %}
+
+<!-- replace everything below with: -->
+<!-- { block content } ESTE ERA EL BLOCK CONTENT ORIGINAL--> 
+
+ <!-- Header Area -->
+<header>
+    <!-- Change the class to container-fluid to make it full width -->
+
+</header>
+
+<!--NEW VIDEO AREA-->
+ <!-- Main Area TOMADO DE LA PAGINA WEB CON DJANGOCMS-->
+     <!-- Change the class to container-fluid to make it full width -->
+    <main class="container-fluid">
+        {% block content %}
+        <div class="feature">
+            <h1>{{ page.banner_title }}</h1>
+                {% if page.banner_cta %}
+                    <a href="{% pageurl page.banner_cta %}" role="button" class="secondary">{{ page.button_text }}</a>
+                {% endif %}
+           
+        </div>
+        <!--Background video area-->
+        <!--Image Area-->
+           <!-- <div class="ParallaxImage bg1">
+                <div class="container">
+                <h1>Parallax Effect Video Background</h1>
+                </div>
+            </div>-->
+                <!--The Parallax Content -->
+                <!-- <div class="ParallaxContent">
+                    <!-<div class="container">
+                    <div class="headlines">
+                    <h3>Parallax Effect Video Design</h3>
+                    <p>Work on all major devices</p>
+                    </div>
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div> -->
+                <!--The Parallax Video -->
+            <div class="ParallaxVideo">
+                <video autoplay muted loop>
+                <source src="https://video.wixstatic.com/video/ffc1bf_2fba95c5f39c40bb8e09983a23e4ce49/1080p/mp4/file.mp4" type="video/mp4">
+                </video>  
+            </div>
+        <!--<h1>Video Background</h1>-->
+            
+        <!--END Background video-->
+        <div class="ParallaxContent">
+        
+
+            <div class="row"> 
+                <div class="col-md-4"> 
+                    <div class="Carlos">
+                        <article>
+                        {% image page.hero_image fill-336x495 %}
+                        </article>
+                    </div>
+                </div>  
+                <!--NOT USED ANYMORE, as it links with old website-->
+            <!-- <div class="Manuel2">
+                    <article>
+                    <img src="https://static.wixstatic.com/media/ffc1bf_30b12f4feddd4134900b2ec457c91e91~mv2.jpg/v1/crop/x_184,y_0,w_1408,h_2075/fill/w_336,h_495,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/M%20Scherler_edited.jpg" class="h-6 mr-3" alt="Flowbite Logo" />
+                    </article>
+                </div>-->
+                <div class="col-md-8">    
+                    <div class="ArticleUberUns">
+                        <article>
+                            {{ page.body|richtext }}
+                            <div class="Hero_txt">
+                                <h5>{{ page.hero_text }}</h5>
+                                {% if page.hero_cta_link %}
+                                    <a href="{% pageurl page.hero_cta_link %}">
+                                        {% firstof page.hero_cta page.hero_cta_link.title %}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            
+            </div>
+            
+        </div>
+    
+            
+        </div>
+        
+        </main>
+        <!-- End of Main -->
+   
+
+<!--END OF NEW VIDEO AREA-->
+
+  
+<!--{% image self.banner_image fill-1200x400 %}-->
+
+    <div class="Extra">
+        {{ page.extra }}
+    </div>
+
+
+{% endblock %}

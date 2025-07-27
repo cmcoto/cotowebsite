@@ -1,0 +1,14 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="card" style="width: 18rem;">
+    
+    {% if self.image %}
+        {% image self.image width-480 %}
+        
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title"> {{ self.name|richtext }} </h5>
+        <p class="card-text">{{ self.text|richtext }} </p>
+        <p class="card-text">{{ self.telephone|richtext }} </p>
+        <p class="card-text">{{ self.email|richtext }}</p>
+    </div>
+</div>

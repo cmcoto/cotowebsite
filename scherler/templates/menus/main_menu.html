@@ -1,0 +1,21 @@
+{% load menu_tags %}
+
+
+
+{% for item in menu_items %}
+    <li class="dropdown nav-item">
+        
+        <a href="{{ item.href }}"> {{ item.text }}</a>
+       
+        {% if item.has_children_in_menu %}
+        <details role="list"  dir="rtl">
+            <summary aria-haspopup="listbox" role="link">{{ item.text }}</summary>
+            <ul class="submenu" role="listbox">
+                {{ item.text }}
+                {% sub_menu item %}
+            </ul>
+        </details>
+        {% endif %}
+        
+    </li>
+{% endfor %}

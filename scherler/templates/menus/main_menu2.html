@@ -1,0 +1,20 @@
+{% load menu_tags %}
+
+{% for item in menu_items %}
+    <li class="{{ item.active_class }}">
+        <a class="nav-link" href="{{ item.href }}">
+            {{ item.text }}
+          
+         </a>
+        {% if item.has_children_in_menu %}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            </a>   
+            <ul class="dropdown-menu">
+                {% sub_menu item %}
+            </ul>
+        </li>
+        {% endif %}
+   </li>
+{% endfor %}
+

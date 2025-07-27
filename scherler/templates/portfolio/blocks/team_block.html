@@ -1,0 +1,25 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<h1>{{ self.title }}</h1>
+
+
+  
+    
+<div class="card-group">
+    {% for card in self.cards %}
+            
+        <div class="card" style="width: 18rem;">
+            {% if card.team_member.image %}
+                {% image card.team_member.image width-250 %}
+            {% endif %}
+            
+            <div class="card-body">
+                <h5 class="card-title"> {{ card.team_member.name|richtext }}</h5>
+                <p class="card-text">{{ card.team_member.text|richtext }}</p>
+                <p class="card-text">{{ card.team_member.telephone|richtext }}</p>
+                <p class="card-text">{{ card.team_member.email|richtext }}</p>
+            </div>
+        </div>
+    
+    {% endfor %}
+</div>

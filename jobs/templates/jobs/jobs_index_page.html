@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-jobsindexpage{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+    <div class="intro">{{ page.intro|richtext }}</div>
+
+    {% for job in jobpages %}
+        <h2><a href="{% pageurl job %}">{{ job.title }}</a></h2>
+        {{ job.specific.intro }}
+        {{ job.specific.body|richtext }}
+    {% endfor %}
+
+{% endblock %}
