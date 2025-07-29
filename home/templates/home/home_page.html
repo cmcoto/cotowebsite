@@ -25,6 +25,7 @@
         {% block content %}
         <div class="feature">
             <h1>{{ page.banner_title }}</h1>
+            {{ page.banner_subtitle|richtext }}
                 {% if page.banner_cta %}
                     <a href="{% pageurl page.banner_cta %}" role="button" class="secondary">{{ page.button_text }}</a>
                 {% endif %}
@@ -32,11 +33,12 @@
         </div>
         <!--Background video area-->
         <!--Image Area-->
-           <!-- <div class="ParallaxImage bg1">
-                <div class="container">
-                <h1>Parallax Effect Video Background</h1>
-                </div>
-            </div>-->
+           <div class="ParallaxImage bg2">  
+                <div class="containerImage">
+                 <!--<h1>Parallax Effect Video Background</h1> -->
+                 
+                </div> 
+            </div>
                 <!--The Parallax Content -->
                 <!-- <div class="ParallaxContent">
                     <!-<div class="container">
@@ -49,11 +51,11 @@
                     </div>
                 </div> -->
                 <!--The Parallax Video -->
-            <div class="ParallaxVideo">
-                <video autoplay muted loop>
+           <!---- <div class="ParallaxVideo"> -->
+              <!---  <video autoplay muted loop>
                 <source src="https://video.wixstatic.com/video/ffc1bf_2fba95c5f39c40bb8e09983a23e4ce49/1080p/mp4/file.mp4" type="video/mp4">
                 </video>  
-            </div>
+            </div> -->
         <!--<h1>Video Background</h1>-->
             
         <!--END Background video-->
