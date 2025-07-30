@@ -1,4 +1,4 @@
-/*Feb20.2024_12:03pm*/
+/*cotowebsite_esta_es_la_importante - July30.2025_15:05pm*/
 body {
     max-width: 100%;
     min-height: 100vh;
@@ -12,16 +12,16 @@ body {
     
 }
 
-header {
-    padding-bottom: 150px;
-}
+
 
 .pagearea {
   padding-top: 25px;
 }
 
-.Banner_title {
+.banner_title {
     background-color: blueviolet;
+    font-weight: 700;
+    font-size: 156px;
 }
 
 .ParallaxVideo video{ 
@@ -44,7 +44,11 @@ header {
     padding-top: 15vh;
     padding-bottom: 15vh;
     text-align: center;
-    
+    background-color: #4E6472;
+}
+.feature h1 {
+  font-weight: 700;
+  font-size: 4rem;
 }
 /*For Parallax Area*/
 .ParallaxImage {
@@ -85,7 +89,7 @@ header {
   }
 
   .ParallaxContent {
-    background: none repeat scroll 0 0 #eeeedd;
+    background: none repeat scroll 0 0 #4E6472;
     
     /*color:#FFF;*/	
     padding-top: 50px;
@@ -139,7 +143,18 @@ header {
       padding-right: 150px;
      
     }
+
+    /* Extras */
+    .block-heading_block {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .block-cards h2 {
+      text-align: center;
+    }
   
+    /*Start FOOTER */
     footer {
         background-color: rgb(207, 194, 194);
         padding-left: 150px;

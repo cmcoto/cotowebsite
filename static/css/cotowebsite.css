@@ -13,10 +13,10 @@ body {
 }
 
 header {
-    padding-bottom: 150px;
+    padding-bottom: 5px;
 }
 
-.Banner_title {
+.banner_title {
     background-color: blueviolet;
 }
 
@@ -40,6 +40,7 @@ header {
     padding-top: 15vh;
     padding-bottom: 15vh;
     text-align: center;
+  
     
 }
 /*For Parallax Area*/
