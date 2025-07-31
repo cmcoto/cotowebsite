@@ -25,15 +25,32 @@
             {% for post in blogpages %}
             {% with post=post.specific %}
             <div class="post_listing card">
-                <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-        
-                 <!-- Add this: -->
-                    {% with post.main_image as main_image %}
-                        {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+                <div class="listing_area">
+                    <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+            
+                    <!-- Add this: -->
+                        {% with post.main_image as main_image %}
+                            {% if main_image %}{% image main_image fill-260x200 %}{% endif %}
+                        {% endwith %}
+            
+                    <p>{{ post.intro }}</p>
+                        
+                    <!--TAGS -->
+                    <!-- Add this: -->
+                    {% with tags=post.tags.all %}
+                    {% if tags %}
+                        <div class="tags">
+                            <h4>Tags</h4>
+                            {% for tag in tags %}
+                                <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                     {% endwith %}
-        
-                <p>{{ post.intro }}</p>
-               <!-- {{ post.body|richtext }} -->
+                    <!-- END TAGS -->
+
+                <!-- {{ post.body|richtext }} -->
+                </div>
             </div>
             {% endwith %}
         {% endfor %}

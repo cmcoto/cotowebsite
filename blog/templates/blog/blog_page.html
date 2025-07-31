@@ -16,17 +16,19 @@
        <!-- <div class="intro">{{ page.intro }}</div> -->
 
        
-
+        <div class="post_image">
         {% for item in page.gallery_images.all %}
             <div style="float: left; margin: 10px">
                 {% image item.image fill-320x240 %}
                 <p>{{ item.caption }}</p>
             </div>
         {% endfor %}
-
+        </div>
+        <div class="post_body">
         {{ page.body|richtext }}
-
+        </div>
         <!-- Authors: -->
+        <div class="post_authors">
         {% with authors=page.authors.all %}
             {% if authors %}
                 <h3>Posted by:</h3>
@@ -40,7 +42,8 @@
                 </ul>
             {% endif %}
         {% endwith %}
-
+        </div>
+        <div class="post_tags">
         <!-- Add this: -->
         {% with tags=page.tags.all %}
         {% if tags %}
@@ -52,7 +55,7 @@
             </div>
         {% endif %}
         {% endwith %}
-
+        </div>
         <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
 
     {% endblock %}

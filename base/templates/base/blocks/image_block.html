@@ -1,6 +1,7 @@
 {% load wagtailimages_tags %}
 
 <figure>
-    {% image self.image fill-700x938 loading="lazy" %}
-    <figcaption>{{ self.caption }} - {{ self.attribution }}</figcaption>
+  <!-- {% image self.image fill-700x938 loading="lazy" %} -->
+    {% image self.image original loading="lazy" %}
+    <figcaption>{{ self.caption }}  {{ self.attribution }}</figcaption>
 </figure>
