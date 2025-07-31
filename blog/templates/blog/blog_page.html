@@ -6,14 +6,16 @@
 {% block body_class %}template-blogpage{% endblock %}
 <div class="container"> 
     {% block content %}
+        <div class="post_title">
         <h1>{{ page.title }}</h1>
+        </div>
         <p class="meta">{{ page.date }}</p>
 
         
 
-        <div class="intro">{{ page.intro }}</div>
+       <!-- <div class="intro">{{ page.intro }}</div> -->
 
-        {{ page.body|richtext }}
+       
 
         {% for item in page.gallery_images.all %}
             <div style="float: left; margin: 10px">
@@ -21,6 +23,8 @@
                 <p>{{ item.caption }}</p>
             </div>
         {% endfor %}
+
+        {{ page.body|richtext }}
 
         <!-- Authors: -->
         {% with authors=page.authors.all %}

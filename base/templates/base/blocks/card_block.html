@@ -1,12 +1,13 @@
 {% load wagtailimages_tags %}
 
 <h2>{{ self.title }}</h2>
-
+<div class="cards_area">
 {% for card in self.cards %}
-
+<div class="inner_card">
 {% image card.image fill-300x600 loading="lazy" %}
-{{ card.title }}
-{{ card.text }}
-
+<h4>{{ card.title }}</h4>
+<p style="color: white;">{{ card.text }}</p>
+</div>
 
 {% endfor %}
+</div>

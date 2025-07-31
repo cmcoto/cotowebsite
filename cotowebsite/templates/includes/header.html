@@ -9,7 +9,7 @@
         {% with header_image=settings.base.NavigationSettings.header_image header_cta=settings.base.NavigationSettings.header_cta  %}
                                 {% if header_image or header_cta  %}
                                     {% if header_image %}
-                                        {% image header_image width-150 %}
+                                    {% image header_image original class='img-fluid' %}
                                         <div>
                                         {% if header_cta %}
                                             {{ header_cta }}

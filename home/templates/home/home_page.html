@@ -27,7 +27,7 @@
             <h1>{{ page.banner_title }}</h1>
             {{ page.banner_subtitle|richtext }}
                 {% if page.banner_cta %}
-                    <a href="{% pageurl page.banner_cta %}" role="button" class="secondary">{{ page.button_text }}</a>
+                    <a href="{% pageurl page.banner_cta %}" class="btn btn-secondary">{{ page.button_text }}</a>
                 {% endif %}
            
         </div>
@@ -83,7 +83,7 @@
                             <div class="Hero_txt">
                                 <h5>{{ page.hero_text }}</h5>
                                 {% if page.hero_cta_link %}
-                                    <a href="{% pageurl page.hero_cta_link %}">
+                                    <a href="{% pageurl page.hero_cta_link %}" class="btn btn-outline-secondary">
                                         {% firstof page.hero_cta page.hero_cta_link.title %}
                                     </a>
                                 {% endif %}

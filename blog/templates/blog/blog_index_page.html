@@ -17,12 +17,14 @@
         </div>
         <div class="col-sm-6">
             {% block content %}
+            <div class="title_index">
             <h1>{{ page.title }}</h1>
-        
+            </div>
             <div class="intro">{{ page.intro|richtext }}</div>
         
             {% for post in blogpages %}
             {% with post=post.specific %}
+            <div class="post_listing card">
                 <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
         
                  <!-- Add this: -->
@@ -31,10 +33,11 @@
                     {% endwith %}
         
                 <p>{{ post.intro }}</p>
-                {{ post.body|richtext }}
+               <!-- {{ post.body|richtext }} -->
+            </div>
             {% endwith %}
         {% endfor %}
-        
+            
         {% endblock %}
 
         </div>

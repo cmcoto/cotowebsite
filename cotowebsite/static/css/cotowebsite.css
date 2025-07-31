@@ -152,6 +152,36 @@ body {
 
     .block-cards h2 {
       text-align: center;
+      padding-bottom: 50px;
+      color: white;
+    }
+
+    .block-cards {
+      background-color: #0A2127;
+      
+    }
+
+    .block-cards h4  {
+      color: white;
+    }
+
+    .cards_area {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /*FOR BLOG INDEX and BLOG POSTS*/
+    .title_index {
+      text-align: center;
+      padding-top: 5em;
+    }
+
+    .post_listing.card {
+      margin: 25px;
+    }
+
+    .post_title {
+      padding-top: 5em;
     }
   
     /*Start FOOTER */
