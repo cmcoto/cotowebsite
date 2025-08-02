@@ -231,6 +231,15 @@ body {
       
       font-family: 'zai Royal Vogue Typewriter 1929', sans-serif;
     }
+
+    .post_authors {
+      padding-top: 30px;
+    }
+
+    .post_tags {
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
   
     /*Start FOOTER */
     footer {
