@@ -5,58 +5,62 @@
 
 {% block body_class %}template-blogpage{% endblock %}
 <div class="container"> 
-    {% block content %}
-        <div class="post_title">
-        <h1>{{ page.title }}</h1>
-        </div>
-        <p class="meta">{{ page.date }}</p>
+    
+        {% block content %}
+        <div class="post_container">
+            <div class="post_title">
+                <h1>{{ page.title }}</h1>
+            </div>
+            <p class="meta">{{ page.date }}</p>
+
+            
+
+            <!-- <div class="intro">{{ page.intro }}</div> -->
 
         
-
-       <!-- <div class="intro">{{ page.intro }}</div> -->
-
-       
-        <div class="post_image">
-        {% for item in page.gallery_images.all %}
-           <!-- <div style="float: left; margin: 10px"> -->
-                {% image item.image fill-420x340 %}
-                <p>{{ item.caption }}</p>
-            </div>
-        {% endfor %}
-        </div>
-        <div class="post_body">
-        {{ page.body|richtext }}
-        </div>
-        <!-- Authors: -->
-        <div class="post_authors">
-        {% with authors=page.authors.all %}
-            {% if authors %}
-                <h3>Posted by:</h3>
-                <ul>
-                    {% for author in authors %}
-                        <li style="display: inline">
-                            {% image author.author_image fill-40x60 style="vertical-align: middle" %}
-                            {{ author.name }}
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
-        </div>
-        <div class="post_tags">
-        <!-- Add this: -->
-        {% with tags=page.tags.all %}
-        {% if tags %}
-            <div class="tags">
-                <h3>Tags</h3>
-                {% for tag in tags %}
-                    <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
+            <div class="post_image">
+                {% for item in page.gallery_images.all %}
+                <!-- <div style="float: left; margin: 10px"> -->
+                        {% image item.image fill-420x340 %}
+                        <p>{{ item.caption }}</p>
+            
                 {% endfor %}
             </div>
-        {% endif %}
-        {% endwith %}
+                <!-- POST Body: -->
+            <div class="post_body">
+                {{ page.body|richtext }}
+            </div>
+                <!-- Authors: -->
+            <div class="post_authors">
+                {% with authors=page.authors.all %}
+                    {% if authors %}
+                        <h3>Posted by:</h3>
+                        <ul>
+                            {% for author in authors %}
+                                <li style="display: inline">
+                                    {% image author.author_image fill-40x60 style="vertical-align: middle" %}
+                                    {{ author.name }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="post_tags">
+                <!-- Add this: -->
+                {% with tags=page.tags.all %}
+                {% if tags %}
+                    <div class="tags">
+                        <h3>Tags</h3>
+                        {% for tag in tags %}
+                            <a href="{% slugurl 'tags' %}?tag={{ tag }}"><button type="button">{{ tag }}</button></a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% endwith %}
+            </div>
+            <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
         </div>
-        <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
-
-    {% endblock %}
+        {% endblock %}
+    
 </div>

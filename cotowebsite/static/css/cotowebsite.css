@@ -192,6 +192,13 @@ body {
     .listing_area {
       padding: 25px;
     }
+    
+    .block-featured_posts {
+      font-family: 'zai Royal Vogue Typewriter 1929', sans-serif;
+      max-width: 850px;
+      margin: 0 auto 100px;
+      padding-top: 40px;
+    }
 
     /*FOR BLOG INDEX and BLOG POSTS*/
     .title_index {
@@ -201,14 +208,24 @@ body {
 
     .post_listing.card {
       margin: 25px;
+      font-family: 'zai Royal Vogue Typewriter 1929', sans-serif;
+      max-width: 850px;
+      margin: 0 auto 100px;
     }
 
+    .post_container{
+      max-width: 600px;
+      margin: 0 auto 100px;
+      font-family: 'zai Royal Vogue Typewriter 1929', sans-serif;
+    }
     .post_title {
       padding-top: 5em;
+      font-family: 'zai Royal Vogue Typewriter 1929', sans-serif;
     }
 
     .post_body {
-      padding-right: 3rem;
+      
+      font-family: 'zai Royal Vogue Typewriter 1929', sans-serif;
     }
   
     /*Start FOOTER */
