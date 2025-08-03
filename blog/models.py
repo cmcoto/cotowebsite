@@ -15,6 +15,7 @@ from wagtail.snippets.models import register_snippet
 class BlogIndexPage(Page):
     max_count = 1
     intro = RichTextField(blank=True)
+    
     # add the get_context method:
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
@@ -22,6 +23,7 @@ class BlogIndexPage(Page):
         blogpages = self.get_children().live().order_by('-first_published_at')
         context['blogpages'] = blogpages
         return context
+    
     
     content_panels = Page.content_panels + [
         FieldPanel('intro')
@@ -56,6 +58,11 @@ class BlogPage(Page):
         index.SearchField('intro'),
         index.SearchField('body'),
     ]
+     #GET LATEST POSTS FOR DOWN AREA ... para que salga el ultimo... antes del de la pagina.
+    def get_recent_blogs(self):
+        max_count = 1
+        return BlogPage.objects.exclude(id=self.id).order_by(
+        '-first_published_at')[:max_count]
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
@@ -115,3 +122,4 @@ class BlogTagIndexPage(Page):
         context = super().get_context(request)
         context['blogpages'] = blogpages
         return context
+
