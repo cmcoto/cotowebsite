@@ -63,6 +63,7 @@ class BlogPage(Page):
         max_count = 1
         return BlogPage.objects.exclude(id=self.id).order_by(
         '-first_published_at')[:max_count]
+    #END OF LATEST POSTS
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
