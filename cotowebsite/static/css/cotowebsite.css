@@ -240,6 +240,10 @@ body {
       padding-top: 30px;
       padding-bottom: 50px;
     }
+
+    .last.card {
+      margin-bottom: 40px;
+    } 
   
     /*Start FOOTER */
     footer {

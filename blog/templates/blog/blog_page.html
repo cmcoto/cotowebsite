@@ -59,6 +59,27 @@
                 {% endif %}
                 {% endwith %}
             </div>
+            <!-- FOR LATEST POSTS -->
+            
+                <div class="last card">
+                    
+                    {% for child in page.get_recent_blogs %}
+                    <p>Read the last post:</p>
+                        <div class="card__content news-blocks">
+                            <a class="blog__recent-posts" href="{{ child.url }}">
+                                
+                                <div class="image">
+                                    {% image child.image fill-850x450-c100  %}
+                                </div>
+                                <h3>{{ child.title }}</h3>
+                                <p>{{ child.introduction|truncatewords:15 }}</p>
+                               
+                            </a>
+                        </div>
+                   
+                    {% endfor %}
+                </div>
+            
             <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
         </div>
         {% endblock %}
