@@ -160,6 +160,11 @@ body {
       padding-top: 50px;
     }
 
+    .block-paragraph_block {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
     .block-cards h2 {
       text-align: center;
       padding-bottom: 50px;
