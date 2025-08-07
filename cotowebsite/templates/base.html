@@ -1,5 +1,6 @@
-{% load static wagtailcore_tags wagtailuserbar menu_tags wagtailimages_tags %}
+{% load static  wagtailcore_tags wagtailuserbar menu_tags wagtailimages_tags  %}
 {% load i18n %}
+
 
 
 <!DOCTYPE html>
@@ -34,6 +35,9 @@
 
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
+
+
+           
         {% endblock %}
     </head>
 
@@ -44,7 +48,7 @@
         
 
         {% include "includes/header.html" %}
-        
+       
 
         <div class= "pagearea">
             {% block content %}{% endblock %}
@@ -52,9 +56,7 @@
             <!-- Footer Area -->
         
             {% include "includes/footer.html" %}
-        
 
-   
 
     <!-- End of Footer -->
 

@@ -10,11 +10,11 @@ from search import views as search_views
 from django.conf.urls.i18n import i18n_patterns
 
 
-
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
+
  
 ]
 
