@@ -1,5 +1,13 @@
 from .base import *
 
+#HE INCLUIDO AQUI LO DE BASES DE DATOS, porque he puesto en Produccion tambien. Si quiero que quede como antes, debo quitar databases de ambos, y uncomment la original en Base.py
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    }
+}
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
