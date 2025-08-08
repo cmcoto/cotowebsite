@@ -74,13 +74,13 @@ class NavigationSettings(BaseGenericSetting):
     email = RichTextField(max_length=255, blank=True, null=True, help_text="Write your email here. Before, choose / and Link, then phone_link...")
 
    
-    privacy_cta = models.ForeignKey(
-        "wagtailcore.Page",
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name="+"
-    )
+   # privacy_cta = models.ForeignKey(
+    #    "wagtailcore.Page",
+     #   null=True,
+      #  blank=True,
+       # on_delete=models.SET_NULL,
+        #related_name="+"
+    #)
  
     panels = [
         MultiFieldPanel(
@@ -108,7 +108,7 @@ class NavigationSettings(BaseGenericSetting):
                 FieldPanel("address"),
                 FieldPanel("phone"),
                 FieldPanel("email"),
-                PageChooserPanel('privacy_cta'),
+                #PageChooserPanel('privacy_cta'),
                 
             ],
             "Your Contact settings",

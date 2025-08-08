@@ -48,8 +48,8 @@
         </div>
         <div class="col Address text-center">
             {# Add Address: #}
-            {% with contact_phrase=settings.base.NavigationSettings.contact_phrase contact_url=settings.base.NavigationSettings.contact_url address=settings.base.NavigationSettings.address email=settings.base.NavigationSettings.email phone=settings.base.NavigationSettings.phone privacy_cta=settings.base.NavigationSettings.privacy_cta %}
-            {% if contact_phrase or contact_url or address or email or phone or privacy_cta %}
+            {% with contact_phrase=settings.base.NavigationSettings.contact_phrase contact_url=settings.base.NavigationSettings.contact_url address=settings.base.NavigationSettings.address email=settings.base.NavigationSettings.email phone=settings.base.NavigationSettings.phone  %}
+            {% if contact_phrase or contact_url or address or email or phone  %}
                 <p>
                     
                     
@@ -75,11 +75,11 @@
                         {{ phone|richtext }} 
                     {% endif %}
                 </ul>
-                <p> 
+             <!--   <p> 
                     {% if privacy_cta %}
                     <a href="{% pageurl privacy_cta %}" class="btn btn-outline-secondary">{{ privacy_cta }}</a>
                     {% endif %}
-                <p>
+                <p>-->
                 {% endif %}
             {% endwith %}
         </div>
