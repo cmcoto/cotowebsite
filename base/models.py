@@ -4,6 +4,7 @@ from wagtail.admin.panels import (
     FieldPanel,
     MultiFieldPanel,
     PublishingPanel,
+    PageChooserPanel,
 )
 
 from wagtail.fields import RichTextField
@@ -71,6 +72,24 @@ class NavigationSettings(BaseGenericSetting):
         help_text="Write your phone number here. Before, choose / and Link, then email_link...",
     )
     email = RichTextField(max_length=255, blank=True, null=True, help_text="Write your email here. Before, choose / and Link, then phone_link...")
+
+    #FOR PRIVACY POLICY
+    privacy_phrase = RichTextField(
+        blank=True,
+        features=['h2', 'h3', 'bold', 'italic'],
+        null=True, help_text="Write What you would like to say as Privacy..on the FOOTER. Example: Privacy Policy, Policy, etc.",
+       
+    )
+
+    privacy_url = RichTextField(blank=True, null=True, features=["link"], help_text="Pick Link using / on the area. The url link will show on the Footer, below Contact_Phrase...")
+
+    privacy_cta = models.ForeignKey(
+        "wagtailcore.Page",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+"
+    )
  
     panels = [
         MultiFieldPanel(
@@ -98,6 +117,9 @@ class NavigationSettings(BaseGenericSetting):
                 FieldPanel("address"),
                 FieldPanel("phone"),
                 FieldPanel("email"),
+                FieldPanel("privacy_phrase"),
+                FieldPanel("privacy_url"),
+                PageChooserPanel('privacy_cta'),
                 
             ],
             "Your Contact settings",
