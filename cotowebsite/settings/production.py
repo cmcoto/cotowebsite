@@ -5,7 +5,7 @@ DEBUG = False
 DATABASES = {
     'default': {
        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cmcoto$website',
+        'NAME': 'cmcoto$default',
         'USER': 'cmcoto',
         'PASSWORD': 'pacesetter',
         'HOST': 'cmcoto.mysql.pythonanywhere-services.com',
