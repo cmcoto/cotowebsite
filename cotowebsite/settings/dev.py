@@ -1,5 +1,5 @@
 from .base import *
-import libsql
+
 
 #HE INCLUIDO AQUI LO DE BASES DE DATOS, porque he puesto en Produccion tambien. Si quiero que quede como antes, debo quitar databases de ambos, y uncomment la original en Base.py
 DATABASES = {
