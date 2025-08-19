@@ -9,6 +9,7 @@ from wagtail.blocks import (
     TextBlock,
     PageChooserBlock,
     URLBlock,
+    RawHTMLBlock,
 )
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.blocks import ImageChooserBlock
@@ -69,6 +70,10 @@ class BaseStreamBlock(StreamBlock):
     heading_block = HeadingBlock()
     paragraph_block = RichTextBlock(icon="pilcrow")
     image_block = ImageBlock()
+    raw_HTML_block = RawHTMLBlock(
+        help_text="Insert RAW Html to embed.",
+        icon="code",
+    )
     embed_block = EmbedBlock(
         help_text="Insert a URL to embed. For example, https://www.youtube.com/watch?v=SGJFWirQ3ks",
         icon="media",
